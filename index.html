@@ -5,16 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Prodbench : AI-powered Product Management Software</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
     <style>
-      .landing-navbar {
-        height: 60px;
+      body {
+        background: #f7f8fb;
+        font-family: 'Poppins', sans-serif;
       }
 
-      h1 {
-        font-size: 2.4rem;
+      .landing-navbar {
+        height: 64px;
+        background: #f7f8fb !important;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .brand-dot {
+        color: #0F8FA6;
+      }
+
+      .nav-link-custom {
+        color: #444444;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 0 1rem;
+        transition: color 0.15s;
+      }
+
+      .nav-link-custom:hover {
+        color: #171717;
+      }
+
+      .btn-request-access {
+        border: 1.5px solid #1a1a1a;
+        border-radius: 999px;
+        padding: 7px 20px;
+        background: transparent;
+        color: #1a1a1a;
+        font-size: 0.88rem;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+      }
+
+      .btn-request-access:hover {
+        background: #1a1a1a;
+        color: #fff;
+      }
+
+      .hero-section {
+        min-height: calc(100vh - 64px);
+        display: flex;
+        align-items: center;
+        padding: 80px 0;
+      }
+
+      .badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: rgba(15,143,166,0.08);
+        border: 0.5px solid rgba(15,143,166,0.22);
+        color: #0a6478;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        padding: 5px 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #0F8FA6;
+        flex-shrink: 0;
+      }
+
+      .hero-headline {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 1.08;
+        color: #171717;
+        font-weight: 400;
+        margin-bottom: 1.8rem;
+      }
+
+      .hero-headline em {
+        color: #0F8FA6;
+        font-style: italic;
+      }
+
+      .hero-body {
+        max-width: 580px;
+        color: #666666;
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-body strong {
+        color: #2a2a2a;
+        font-weight: 600;
+      }
+
+      .btn-outline-dark-pill {
+        border: none;
+        border-radius: 10px;
+        padding: 11px 26px;
+        background: #171717;
+        color: #fff;
+        font-size: 0.92rem;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        transition: background 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-outline-dark-pill:hover {
+        background: #0F8FA6;
+        color: #fff;
+      }
+
+      .demo-link {
+        background: transparent;
+        color: #555555;
+        border: none;
+        font-size: 0.92rem;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        cursor: pointer;
+        transition: color 0.15s;
+      }
+
+      .demo-link:hover {
+        color: #0F8FA6;
+      }
+
+      .play-circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1.5px solid #b0bab6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.15s;
+      }
+
+      .demo-link:hover .play-circle {
+        border-color: #0F8FA6;
+      }
+
+      .play-circle svg {
+        width: 10px;
+        height: 10px;
+        fill: #555555;
+        margin-left: 2px;
+        transition: fill 0.15s;
+      }
+
+      .demo-link:hover .play-circle svg {
+        fill: #0F8FA6;
+      }
+
+      /* STATS STRIP */
+      .stats-strip {
+        background: #fff;
+        border-top: 0.5px solid rgba(0,0,0,0.08);
+        border-bottom: 0.5px solid rgba(0,0,0,0.08);
+        padding: 32px 0;
+      }
+
+      .stat-num {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.5px;
+        line-height: 1;
+      }
+
+      .stat-num span { color: #0F8FA6; }
+
+      .stat-label {
+        font-size: 0.8rem;
+        color: #9aa5a3;
+        margin-top: 4px;
+      }
+
+      .stat-divider {
+        border-left: 0.5px solid rgba(0,0,0,0.08);
+      }
+
+      /* FEATURES */
+      .features-section {
+        padding: 88px 0;
+        background: #f7f8fb;
+      }
+
+      .section-tag {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #0F8FA6;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #171717;
+        text-align: center;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+
+      .section-sub {
+        font-size: 0.97rem;
+        color: #666666;
+        text-align: center;
+        max-width: 520px;
+        margin: 0 auto 52px;
+        line-height: 1.7;
+      }
+
+      .feat-card {
+        background: #fff;
+        border: 0.5px solid rgba(0,0,0,0.1);
+        border-radius: 14px;
+        padding: 28px 24px;
+        height: 100%;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .feat-card:hover {
+        border-color: #0F8FA6;
+        box-shadow: 0 4px 20px rgba(15,143,166,0.08);
+      }
+
+      .feat-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(15,143,166,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .feat-icon i {
+        font-size: 22px;
+        color: #0F8FA6;
+      }
+
+      .feat-card h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #171717;
+        margin-bottom: 8px;
+      }
+
+      .feat-card p {
+        font-size: 0.85rem;
+        color: #9aa5a3;
+        line-height: 1.7;
+        margin: 0;
       }
     </style>
 
@@ -22,74 +292,139 @@
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init('phc_cgyZd3CT8HLq2kpUlqyNNwsTFjVJQHsMDjo5C555FxO', {
           api_host: 'https://us.i.posthog.com',
-          person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+          person_profiles: 'identified_only',
       })
     </script>
-</head>
+  </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark landing-navbar">
+    <nav class="navbar navbar-expand-md landing-navbar">
       <div class="container">
-        <a class="navbar-brand landing-brand text-white" href="#">
+        <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="#" style="color: #1a1a1a; font-size: 1.05rem; letter-spacing: -0.01em;">
           Prodbench
         </a>
-        
-        <a href="mailto:hello@prodbench.com" target="_blank" class="text-white">
-          <i class="bi bi-envelope"></i> hello@prodbench.com
-        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item"><a class="nav-link-custom" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="#">Team</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="#">Contact</a></li>
+          </ul>
+          <a href="#" class="btn-outline-dark-pill">Request access</a>
+        </div>
       </div>
     </nav>
 
-    <section class="py-5 bg-white">
+    <section class="hero-section">
       <div class="container">
-        <div class="mb-4 text-center">
-          <h1 class="mb-4">Prodbench</h1>
+        <div class="badge-pill"><div class="badge-dot"></div>Product Intelligence Layer</div>
 
-          <h3 class="my-4">
-            The Dynamic Product Management Software for 
-            <span class="text-primary"> Hyper-Growth SaaS Teams !</span> 
-          </h3>
+        <h1 class="hero-headline">
+          AI made building fast.<br>
+          Now know <em>what</em><br>
+          to build next.
+        </h1>
 
-        </div>
+        <p class="hero-body">
+          Prodbench unifies <strong>customer signals, competitor moves, and market
+          opportunities</strong> — and connects them directly to your product
+          backlog. One system. Every decision, backed by intelligence.
+        </p>
 
-        <div class="row text-start">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-start py-3">
-              <div class="flex-grow-1 text-center">
-                <img src="assets/img/makers-team.png" alt="" class="img-fluid" />
-              </div>
+        <div class="d-flex align-items-center gap-4 flex-wrap">
+          <a href="#" class="btn-outline-dark-pill">Request access</a>
+          <a href="#" class="demo-link">
+            <div class="play-circle">
+              <svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg>
             </div>
-          </div>
-          <div class="col-md-3"></div>
+            Watch a 2-min demo
+          </a>
         </div>
-
-        <div class="mt-3 text-center">
-          <h4 class="my-3">
-            <span class="text-primary">We are launching soon</span>
-          </h4>
-        </div>
-
-
-
-        <div class="mb-5 text-center">
-          <h5 class="my-3">
-            What are your biggest challenges in product management? 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScj6MZdzsbWODAOtx1clq-q0khAgZ2G9HMsMY2ppZViy-z-9Q/viewform?usp=header" target="_blank" class="btn btn-lg btn-success btn-pill my-3 ms-3">
-              Help us shape the Future
-            </a>
-          </h5>
-        </div>
-
-
-
-
-
-
-
-
       </div>
     </section>
-  
-  </html>
+
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="d-flex">
+          <div class="flex-fill pe-4">
+            <div class="stat-num">10x<span>+</span></div>
+            <div class="stat-label">Faster roadmap decisions</div>
+          </div>
+          <div class="flex-fill px-4 stat-divider">
+            <div class="stat-num">500<span>+</span></div>
+            <div class="stat-label">Product teams onboarded</div>
+          </div>
+          <div class="flex-fill px-4 stat-divider">
+            <div class="stat-num">3<span>min</span></div>
+            <div class="stat-label">Avg. time to first insight</div>
+          </div>
+          <div class="flex-fill ps-4 stat-divider">
+            <div class="stat-num">99<span>%</span></div>
+            <div class="stat-label">Signal accuracy rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">Everything your product team needs</h2>
+        <p class="section-sub">One intelligence layer that connects signals, strategy, and your backlog — so every build decision is backed by data.</p>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-antenna-bars-5" aria-hidden="true"></i></div>
+              <h3>Customer signal capture</h3>
+              <p>Automatically pull in feedback, support tickets, and usage patterns to surface what users actually need.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-binoculars" aria-hidden="true"></i></div>
+              <h3>Competitor intelligence</h3>
+              <p>Track competitor moves, pricing changes, and feature launches in real time — never be caught off guard.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-chart-arrows-vertical" aria-hidden="true"></i></div>
+              <h3>Market opportunity scoring</h3>
+              <p>Quantify market gaps and growth potential so you can prioritize the highest-impact features first.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-layout-kanban" aria-hidden="true"></i></div>
+              <h3>Backlog sync</h3>
+              <p>Insights flow directly into your existing backlog tools. No copy-pasting, no context switching.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+              <h3>AI-powered prioritization</h3>
+              <p>Let intelligence rank your roadmap items by impact, effort, and strategic alignment — automatically.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+              <h3>Enterprise-grade security</h3>
+              <p>SOC 2 certified, SSO-ready, and built for teams that need full control over their data and access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
