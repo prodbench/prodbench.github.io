@@ -312,6 +312,67 @@
         line-height: 1.7;
         margin: 0;
       }
+
+      /* ===== MOBILE ONLY (≤ 767.98px) ===== */
+      @media (max-width: 767.98px) {
+
+        /* Navbar collapsed menu */
+        #navMenu {
+          padding: 8px 0 16px;
+        }
+
+        #navMenu .nav-link-custom {
+          padding: 10px 4px;
+          display: block;
+        }
+
+        #navMenu .btn-outline-dark-pill {
+          margin-top: 12px;
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+
+        /* Hero */
+        .hero-section {
+          padding: 36px 0 40px;
+          min-height: auto;
+        }
+
+        .badge-pill {
+          font-size: 0.72rem;
+        }
+
+        .hero-headline {
+          font-size: 2rem;
+          line-height: 1.15;
+        }
+
+        /* Stats strip — stack vertically */
+        .stats-strip .d-flex {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stats-strip .d-flex > div {
+          min-width: unset !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          width: 100%;
+        }
+
+        .stat-divider {
+          border-left: none;
+          border-top: 0.5px solid rgba(0,0,0,0.1);
+        }
+
+        /* Features section */
+        .features-section {
+          padding: 56px 0;
+        }
+      }
     </style>
 
     <script>
@@ -338,9 +399,11 @@
 
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav mx-auto gap-1">
+            <!--
             <li class="nav-item"><a class="nav-link-custom" href="#">Features</a></li>
             <li class="nav-item"><a class="nav-link-custom" href="#">Team</a></li>
             <li class="nav-item"><a class="nav-link-custom" href="#">Contact</a></li>
+            -->
           </ul>
           <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
         </div>
