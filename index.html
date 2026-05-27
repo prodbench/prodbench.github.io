@@ -133,6 +133,11 @@
         color: #fff;
       }
 
+      .btn-outline-dark-pill[aria-disabled="true"] {
+        cursor: default;
+        pointer-events: none;
+      }
+
       .demo-link {
         background: transparent;
         color: #555555;
@@ -186,27 +191,47 @@
         background: #fff;
         border-top: 0.5px solid rgba(0,0,0,0.08);
         border-bottom: 0.5px solid rgba(0,0,0,0.08);
-        padding: 32px 0;
+        padding: 28px 0 32px;
+      }
+
+      .stats-header {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #b0b8b6;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 20px;
+        text-align: center;
       }
 
       .stat-num {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 700;
         color: #1a1a1a;
         letter-spacing: -0.5px;
         line-height: 1;
+        text-align: center;
       }
 
-      .stat-num span { color: #02b3bd; }
+      .stat-num span { color: #E05A28; }
 
       .stat-label {
         font-size: 0.8rem;
-        color: #9aa5a3;
+        color: #3a3a3a;
+        margin-top: 6px;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .stat-source {
+        font-size: 0.72rem;
+        color: #b0b8b6;
         margin-top: 4px;
+        text-align: center;
       }
 
       .stat-divider {
-        border-left: 0.5px solid rgba(0,0,0,0.08);
+        border-left: 0.5px solid rgba(0,0,0,0.1);
       }
 
       /* FEATURES */
@@ -232,7 +257,7 @@
         color: #171717;
         text-align: center;
         margin-bottom: 10px;
-        letter-spacing: -0.5px;
+        letter-spacing: 0.3px;
       }
 
       .section-sub {
@@ -303,7 +328,7 @@
     <nav class="navbar navbar-expand-md landing-navbar">
       <div class="container">
         <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="#" style="color: #1a1a1a; font-size: 1.6rem; letter-spacing: 0.02em;">
-          <img src="assets/img/prodbench-logo.png" alt="" style="height: 60px; width: 48px;">
+          <img src="assets/img/prodbench-logo.png" alt="" style="height: 60px; width: 48px; margin-right: -6px;">
           Prodbench
         </a>
 
@@ -317,7 +342,7 @@
             <li class="nav-item"><a class="nav-link-custom" href="#">Team</a></li>
             <li class="nav-item"><a class="nav-link-custom" href="#">Contact</a></li>
           </ul>
-          <a href="#" class="btn-outline-dark-pill">Request access</a>
+          <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
         </div>
       </div>
     </nav>
@@ -337,7 +362,7 @@
         </p>
 
         <div class="d-flex align-items-center gap-4 flex-wrap">
-          <a href="#" class="btn-outline-dark-pill">Request access</a>
+          <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
           <!--
           <a href="#" class="demo-link">
             <div class="play-circle">
@@ -355,22 +380,19 @@
     -->
     <div class="stats-strip">
       <div class="container">
-        <div class="d-flex">
-          <div class="flex-fill pe-4">
-            <div class="stat-num">10x<span>+</span></div>
-            <div class="stat-label">Faster roadmap decisions</div>
+        <div class="stats-header">The Hidden Cost of Product Chaos</div>
+        <div class="d-flex justify-content-center">
+          <div class="px-5 pe-5" style="min-width:220px">
+            <div class="stat-num"><span>68</span>%</div>
+            <div class="stat-label">Of roadmap items never ship</div>
           </div>
-          <div class="flex-fill px-4 stat-divider">
-            <div class="stat-num">500<span>+</span></div>
-            <div class="stat-label">Product teams onboarded</div>
+          <div class="px-5 stat-divider" style="min-width:220px">
+            <div class="stat-num"><span>3</span> in 5</div>
+            <div class="stat-label">PMs lack real-time customer data</div>
           </div>
-          <div class="flex-fill px-4 stat-divider">
-            <div class="stat-num">3<span>min</span></div>
-            <div class="stat-label">Avg. time to first insight</div>
-          </div>
-          <div class="flex-fill ps-4 stat-divider">
-            <div class="stat-num">99<span>%</span></div>
-            <div class="stat-label">Signal accuracy rate</div>
+          <div class="ps-5 stat-divider" style="min-width:220px">
+            <div class="stat-num"><span>~30</span> min</div>
+            <div class="stat-label">Lost refocusing after every L3 pull-in</div>
           </div>
         </div>
       </div>
