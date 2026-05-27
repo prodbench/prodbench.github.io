@@ -21,6 +21,19 @@
         height: 64px;
         background: #f7f8fb !important;
         border-bottom: 1px solid #e8e8e8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        transform: translateY(-100%);
+        transition: transform 0.28s ease, box-shadow 0.2s;
+      }
+
+      .landing-navbar.is-visible {
+        transform: translateY(0);
+        box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+        border-bottom-color: transparent;
       }
 
       .brand-dot {
@@ -57,7 +70,7 @@
       }
 
       .hero-section {
-        min-height: calc(100vh - 64px);
+        min-height: 100vh;
         display: flex;
         align-items: center;
         padding: 80px 0;
@@ -321,7 +334,7 @@
 
       /* FEATURES */
       .features-section {
-        padding: 88px 0;
+        padding: 48px 0;
         background: #f7f8fb;
       }
 
@@ -350,7 +363,7 @@
         color: #666666;
         text-align: center;
         max-width: 520px;
-        margin: 0 auto 52px;
+        margin: 0 auto 48px;
         line-height: 1.7;
       }
 
@@ -569,7 +582,7 @@
       <div class="container">
         <div class="section-tag">Features</div>
         <h2 class="section-title">Everything modern product makers need, in one place.</h2>
-        <p class="section-sub">Product Intelligence layer that connects signals, strategy, and execution.</p>
+        <p class="section-sub">Product Intelligence platform that connects signals, strategy, and execution.</p>
 
         <div class="row g-3">
           <div class="col-md-4">
@@ -619,6 +632,27 @@
     </section>
     <!--      
     -->
+
+    <script>
+      (function () {
+        var nav = document.querySelector('.landing-navbar');
+        var strip = document.querySelector('.stats-strip');
+        if (!nav || !strip) return;
+
+        function update() {
+          var belowStrip = strip.getBoundingClientRect().bottom < nav.offsetHeight;
+          nav.classList.toggle('is-visible', window.scrollY < 60 || belowStrip);
+        }
+
+        window.addEventListener('scroll', update, { passive: true });
+
+        // Show instantly on page load — no slide animation
+        nav.style.transition = 'none';
+        nav.classList.add('is-visible');
+        nav.offsetHeight; // force reflow before re-enabling transition
+        nav.style.transition = '';
+      }());
+    </script>
 
     <script>
       (function () {
