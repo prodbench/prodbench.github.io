@@ -413,6 +413,14 @@
       /* ===== MOBILE ONLY (≤ 767.98px) ===== */
       @media (max-width: 767.98px) {
 
+        /* Disable fixed/sticky navbar on mobile */
+        .landing-navbar {
+          position: relative;
+          top: auto;
+          transform: none;
+          box-shadow: none;
+        }
+
         /* Navbar collapsed menu */
         #navMenu {
           padding: 8px 0 16px;
