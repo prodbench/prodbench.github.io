@@ -6,479 +6,11 @@
     <title>Prodbench | Product Intelligence & Work Management</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-
-    <style>
-      body {
-        background: #f7f8fb;
-        font-family: 'Poppins', sans-serif;
-      }
-
-      .landing-navbar {
-        height: 64px;
-        background: #f7f8fb !important;
-        border-bottom: 1px solid #e8e8e8;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1030;
-        transform: translateY(-100%);
-        transition: transform 0.28s ease, box-shadow 0.2s;
-      }
-
-      .landing-navbar.is-visible {
-        transform: translateY(0);
-        box-shadow: 0 2px 14px rgba(0,0,0,0.07);
-        border-bottom-color: transparent;
-      }
-
-      .brand-dot {
-        color: #0F8FA6;
-      }
-
-      .nav-link-custom {
-        color: #444444;
-        text-decoration: none;
-        font-size: 0.95rem;
-        padding: 0 1rem;
-        transition: color 0.15s;
-      }
-
-      .nav-link-custom:hover {
-        color: #171717;
-      }
-
-      .btn-request-access {
-        border: 1.5px solid #1a1a1a;
-        border-radius: 999px;
-        padding: 7px 20px;
-        background: transparent;
-        color: #1a1a1a;
-        font-size: 0.88rem;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
-        transition: background 0.15s, color 0.15s;
-      }
-
-      .btn-request-access:hover {
-        background: #1a1a1a;
-        color: #fff;
-      }
-
-      .hero-section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 80px 0;
-      }
-
-      .badge-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        background: rgba(2,179,189,0.08);
-        border: 0.5px solid rgba(2,179,189,0.22);
-        color: #02b3bd;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        padding: 5px 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-      }
-
-      .badge-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #02b3bd;
-        flex-shrink: 0;
-      }
-
-      .hero-headline {
-        font-family:  serif;
-        font-size: clamp(2.5rem, 5vw, 3rem);
-        line-height: 1.2;
-        color: #3e3f3f;
-        margin-bottom: 1.8rem;
-      }
-
-      .hero-headline em {
-        color: #02b3bd;
-        font-weight: 600;
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        line-height: 2;
-        font-style: italic;
-      }
-
-      .hero-body {
-        max-width: 600px;
-        color: #666666;
-        font-size: 1rem;
-        line-height: 1.75;
-        margin-bottom: 2.5rem;
-      }
-
-      .hero-body strong {
-        color: #2a2a2a;
-        font-weight: 600;
-      }
-
-      .btn-outline-dark-pill {
-        border: none;
-        border-radius: 8px;
-        padding: 11px 26px;
-        background: #293042;
-        color: #fff;
-        font-size: 0.92rem;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
-        transition: background 0.2s;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .btn-outline-dark-pill:hover {
-        background: #0F8FA6;
-        color: #fff;
-      }
-
-      .btn-outline-dark-pill[aria-disabled="true"] {
-        cursor: default;
-        pointer-events: none;
-      }
-
-      .demo-link {
-        background: transparent;
-        color: #555555;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.92rem;
-        font-family: 'Poppins', sans-serif;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 0;
-        cursor: pointer;
-        transition: color 0.15s;
-      }
-
-      .demo-link:hover {
-        color: #0F8FA6;
-      }
-
-      .play-circle {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        border: 1.5px solid #b0bab6;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        transition: border-color 0.15s;
-      }
-
-      .demo-link:hover .play-circle {
-        border-color: #0F8FA6;
-      }
-
-      .play-circle svg {
-        width: 10px;
-        height: 10px;
-        fill: #555555;
-        margin-left: 2px;
-        transition: fill 0.15s;
-      }
-
-      .demo-link:hover .play-circle svg {
-        fill: #0F8FA6;
-      }
-
-      /* STATS STRIP */
-      .stats-strip {
-        background: #fff;
-        border-top: 0.5px solid rgba(0,0,0,0.08);
-        border-bottom: 0.5px solid rgba(0,0,0,0.08);
-        padding: 20px 0;
-      }
-
-      .stats-two-col {
-        display: flex;
-        align-items: center;
-      }
-
-      .stats-left-pane {
-        flex: 3;
-        padding-right: 32px;
-        border-right: 0.5px solid rgba(0,0,0,0.1);
-      }
-
-      .stats-right-pane {
-        flex: 7;
-        padding-left: 48px;
-      }
-
-      .stats-header {
-        font-size: 0.68rem;
-        font-weight: 600;
-        color: #b0b8b6;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-bottom: 12px;
-      }
-
-      .stats-carousel { min-height: 90px; }
-
-      .stat-slide { display: none; }
-
-      .stat-slide.active {
-        display: block;
-        animation: statFadeIn 0.4s ease;
-      }
-
-      @keyframes statFadeIn {
-        from { opacity: 0; transform: translateY(6px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-
-      .stat-num {
-        font-size: 2.6rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        letter-spacing: -0.5px;
-        line-height: 1;
-      }
-
-      .stat-num span { color: #E05A28; }
-
-      .stat-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #1a1a1a;
-        margin-top: 6px;
-        margin-bottom: 4px;
-        line-height: 1.3;
-      }
-
-      .stat-sub {
-        font-size: 0.82rem;
-        color: #999;
-        line-height: 1.4;
-      }
-
-      .stat-dots {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        margin-top: 12px;
-      }
-
-      .stat-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #ddd;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        transition: background 0.2s, width 0.2s, border-radius 0.2s;
-      }
-
-      .stat-dot.active {
-        background: #E05A28;
-        width: 22px;
-        border-radius: 4px;
-      }
-
-      .stats-fix-label {
-        font-size: 0.68rem;
-        font-weight: 600;
-        color: #b0b8b6;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-bottom: 10px;
-      }
-
-      .stats-fix-body {
-        font-size: 1.15rem;
-        font-weight: 500;
-        color: #1a1a1a;
-        line-height: 1.55;
-        margin-bottom: 4px;
-      }
-
-      .btn-get-access {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        border: 1.5px solid #1a1a1a;
-        border-radius: 10px;
-        padding: 10px 22px;
-        background: transparent;
-        color: #1a1a1a;
-        font-size: 0.9rem;
-        font-family: 'Poppins', sans-serif;
-        text-decoration: none;
-        pointer-events: none;
-      }
-
-      .stats-right-pane .btn-outline-dark-pill {
-        padding: 7px 16px;
-        font-size: 0.82rem;
-      }
-
-      /* FEATURES */
-      .features-section {
-        padding: 48px 0;
-        background: #f7f8fb;
-      }
-
-      .section-tag {
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: #02b3bd;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-      .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #171717;
-        text-align: center;
-        margin-bottom: 10px;
-        letter-spacing: 0.3px;
-      }
-
-      .section-sub {
-        font-size: 0.97rem;
-        color: #666666;
-        text-align: center;
-        max-width: 520px;
-        margin: 0 auto 48px;
-        line-height: 1.7;
-      }
-
-      .feat-card {
-        background: #fff;
-        border: 0.5px solid rgba(0,0,0,0.1);
-        border-radius: 14px;
-        padding: 28px 24px;
-        height: 100%;
-        transition: border-color 0.2s, box-shadow 0.2s;
-      }
-
-      .feat-card:hover {
-        border-color: #02b3bd;
-        box-shadow: 0 4px 20px rgba(2,179,189,0.08);
-      }
-
-      .feat-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 10px;
-        background: rgba(2,179,189,0.08);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-      }
-
-      .feat-icon i {
-        font-size: 22px;
-        color: #02b3bd;
-      }
-
-      .feat-card h3 {
-        font-size: 0.95rem;
-        font-weight: 400;
-        color: #171717;
-        margin-bottom: 8px;
-      }
-
-      .feat-card p {
-        font-size: 0.85rem;
-        color: #9aa5a3;
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      /* ===== MOBILE ONLY (≤ 767.98px) ===== */
-      @media (max-width: 767.98px) {
-
-        /* Disable fixed/sticky navbar on mobile */
-        .landing-navbar {
-          position: relative;
-          top: auto;
-          transform: none;
-          box-shadow: none;
-        }
-
-        /* Navbar collapsed menu */
-        #navMenu {
-          padding: 8px 0 16px;
-        }
-
-        #navMenu .nav-link-custom {
-          padding: 10px 4px;
-          display: block;
-        }
-
-        #navMenu .btn-outline-dark-pill {
-          margin-top: 12px;
-          display: block;
-          text-align: center;
-          width: 100%;
-        }
-
-        /* Hero */
-        .hero-section {
-          padding: 36px 0 40px;
-          min-height: auto;
-        }
-
-        .badge-pill {
-          font-size: 0.72rem;
-        }
-
-        .hero-headline {
-          font-size: 2.2rem;
-          line-height: 1.15;
-        }
-
-        /* Stats strip — stack vertically */
-        .stats-two-col {
-          flex-direction: column;
-        }
-
-        .stats-left-pane {
-          padding-right: 0;
-          border-right: none;
-          border-bottom: 0.5px solid rgba(0,0,0,0.1);
-          padding-bottom: 28px;
-          width: 100%;
-        }
-
-        .stats-right-pane {
-          padding-left: 0;
-          padding-top: 28px;
-          width: 100%;
-        }
-
-        /* Features section */
-        .features-section {
-          padding: 56px 0;
-        }
-      }
-    </style>
+    <link href="assets/css/landing.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.45.0/dist/tabler-icons.min.css">
+    <link rel="preload" as="image" href="assets/img/prodbench-logo-240.png">
 
     <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -494,7 +26,7 @@
     <nav class="navbar navbar-expand-md landing-navbar">
       <div class="container">
         <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="#" style="color: #1a1a1a; font-size: 1.6rem; letter-spacing: 0.02em;">
-          <img src="assets/img/prodbench-logo.png" alt="" style="height: 60px; width: 48px; margin-right: -6px;">
+          <img src="assets/img/prodbench-logo-240.png" alt="" width="48" height="60" fetchpriority="high" style="height: 60px; width: 48px; margin-right: -6px;">
           Prodbench
         </a>
 
@@ -503,13 +35,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav mx-auto gap-1">
-            <!--
-            <li class="nav-item"><a class="nav-link-custom" href="#">Features</a></li>
-            <li class="nav-item"><a class="nav-link-custom" href="#">Team</a></li>
-            <li class="nav-item"><a class="nav-link-custom" href="#">Contact</a></li>
-            -->
-          </ul>
+          <ul class="navbar-nav mx-auto gap-1"></ul>
           <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
         </div>
       </div>
@@ -522,8 +48,11 @@
         <div class="hero-headline">
           Customer Signals.<br>
           Roadmaps.<br>
-          Teams <span style="font-size: 2.3rem;">&</span> AI Execution.<br>
-          Finally connected <em>in One Platform.</em>
+          Teams <span style="font-family: serif; font-size: 2rem;">&</span> AI Execution.<br>
+          <div style=" line-height: 1.4rem;">&nbsp;</div> 
+          Finally connected
+          <br class="d-block d-sm-none"/>
+          <em>in One Platform.</em>
         </div>
 
         <p class="hero-body">
@@ -532,14 +61,6 @@
 
         <div class="d-flex align-items-center gap-4 flex-wrap">
           <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
-          <!--
-          <a href="#" class="demo-link">
-            <div class="play-circle">
-              <svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg>
-            </div>
-            Watch a 2-min demo
-          </a>
-          -->
         </div>
       </div>
     </section>
@@ -585,8 +106,6 @@
     </div>
 
     <!-- FEATURES -->
-    <!--      
-    -->
     <section class="features-section">
       <div class="container">
         <div class="section-tag">Features</div>
@@ -639,8 +158,6 @@
         </div>
       </div>
     </section>
-    <!--      
-    -->
 
     <script>
       (function () {
