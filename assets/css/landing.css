@@ -270,7 +270,15 @@ body {
   box-shadow: 0 4px 20px rgba(2,179,189,0.08);
 }
 
+.feat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
 .feat-icon {
+  flex: 0 0 auto;
   width: 44px;
   height: 44px;
   border-radius: 10px;
@@ -278,7 +286,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
 }
 
 .feat-icon i {
@@ -290,7 +297,7 @@ body {
   font-size: 0.95rem;
   font-weight: 400;
   color: #171717;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .feat-card p {
