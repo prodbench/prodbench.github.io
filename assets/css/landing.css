@@ -223,7 +223,7 @@ body {
 
 /* FEATURES */
 .features-section {
-  padding: 48px 0;
+  padding: 24px 0 48px;
   background: #f7f8fb;
   scroll-margin-top: 80px;
 }
@@ -309,7 +309,7 @@ body {
 
 /* AGENTS */
 .agents-section {
-  padding: 64px 0;
+  padding: 32px 0;
   scroll-margin-top: 80px;
 }
 
@@ -535,16 +535,11 @@ body {
   }
 
   .hero-right {
-    order: -1;
-  }
-
-  .hero-image {
-    max-width: 320px;
-    margin: 0 auto;
+    display: none;
   }
 
   /* Features section */
   .features-section {
-    padding: 56px 0;
+    padding: 28px 0 56px;
   }
 }
