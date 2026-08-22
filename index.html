@@ -26,21 +26,14 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md landing-navbar">
-      <div class="container">
+    <nav class="navbar landing-navbar">
+      <div class="container d-flex align-items-center justify-content-between">
         <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="#" style="color: #1a1a1a; font-size: 1.6rem; letter-spacing: 0.02em;">
           <img src="assets/img/prodbench-logo-240.png" alt="" width="48" height="60" fetchpriority="high" style="height: 60px; width: 48px; margin-right: -6px;">
           Prodbench
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav mx-auto gap-1"></ul>
-          <span class="h4 mt-3">hello@prodbench.com</span>
-        </div>
+        <span class="h4 mb-0 nav-contact-email">hello@prodbench.com</span>
       </div>
     </nav>
 
@@ -65,7 +58,7 @@
             </p>
 
             <div class="d-flex align-items-center gap-4 flex-wrap">
-              <a class="btn-outline-dark-pill" aria-disabled="true" tabindex="-1">We are launching soon</a>
+              <button type="button" class="btn-outline-dark-pill" disabled>We are launching soon</button>
             </div>
           </div>
 
@@ -79,7 +72,7 @@
     <hr class="mx-7">
 
     <!-- FEATURES -->
-    <section class="features-section">
+    <section class="features-section" id="features">
       <div class="container">
         <div class="section-tag">Features</div>
         <h2 class="section-title">Everything modern product makers need, in one place.</h2>
@@ -97,7 +90,7 @@
             <div class="feat-card">
               <div class="feat-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div>
               <h3>Support escalations — without the chaos</h3>
-              <p>Resolve customer issues faster with AI-assisted triage and smart backlog linking. Cut manual handoffs and accelerate  customer satisfaction.</p>
+              <p>Resolve customer issues faster with AI-assisted triage and smart backlog linking. Cut manual handoffs and accelerate customer satisfaction.</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -118,7 +111,7 @@
             <div class="feat-card">
               <div class="feat-icon"><i class="ti ti-brand-speedtest" aria-hidden="true"></i></div>
               <h3>Continuous Competitive Intelligence</h3>
-              <p>Stay ahead with intelligent  monitoring. Track market, competitive strengths, and customer sentiment — so your team always knows where to move next.</p>
+              <p>Stay ahead with intelligent monitoring. Track market, competitive strengths, and customer sentiment — so your team always knows where to move next.</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -135,7 +128,7 @@
     <hr class="mx-7">
 
     <!-- AGENTS -->
-    <section class="agents-section">
+    <section class="agents-section" id="agents">
       <div class="container">
         <div class="section-tag">Agents</div>
         <h2 class="section-title">Built-in AI agents that work for you 24/7.</h2>

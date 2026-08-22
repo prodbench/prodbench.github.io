@@ -21,22 +21,20 @@ body {
 .landing-navbar > .container {
   height: 100%;
   align-items: center;
+  position: relative;
+}
+
+.landing-navbar .navbar-brand {
+  display: flex;
+  padding: 0;
 }
 
 .brand-dot {
   color: #0F8FA6;
 }
 
-.nav-link-custom {
-  color: #444444;
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 0 1rem;
-  transition: color 0.15s;
-}
-
-.nav-link-custom:hover {
-  color: #171717;
+.nav-contact-email {
+  white-space: nowrap;
 }
 
 .btn-request-access {
@@ -227,6 +225,7 @@ body {
 .features-section {
   padding: 48px 0;
   background: #f7f8fb;
+  scroll-margin-top: 80px;
 }
 
 .section-tag {
@@ -304,6 +303,7 @@ body {
 /* AGENTS */
 .agents-section {
   padding: 64px 0;
+  scroll-margin-top: 80px;
 }
 
 .agents-carousel {
@@ -487,8 +487,9 @@ body {
 
   /* Compact brand/logo */
   .navbar-brand {
-    font-size: 1.25rem !important;
+    font-size: 1.05rem !important;
     gap: 6px !important;
+    margin-right: 0 !important;
   }
 
   .navbar-brand img {
@@ -496,21 +497,8 @@ body {
     width: 32px !important;
   }
 
-  /* Navbar collapsed menu */
-  #navMenu {
-    padding: 8px 0 16px;
-  }
-
-  #navMenu .nav-link-custom {
-    padding: 10px 4px;
-    display: block;
-  }
-
-  #navMenu .btn-outline-dark-pill {
-    margin-top: 12px;
-    display: block;
-    text-align: center;
-    width: 100%;
+  .nav-contact-email {
+    font-size: 0.95rem !important;
   }
 
   /* Hero */
