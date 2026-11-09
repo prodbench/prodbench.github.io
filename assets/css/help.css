@@ -1,0 +1,87 @@
+/* ===== HELP CENTRE (/help/*) =====
+   Layout, breadcrumb, tables, alerts and cards come from Bootstrap (app.css);
+   tags, icons and buttons come from landing.css. Only help-specific
+   gaps are defined here. */
+
+/* Sticky TOC and anchor targets sit below the fixed 64px navbar */
+.help-toc {
+  top: 88px;
+}
+
+.help-article section,
+.help-article [id] {
+  scroll-margin-top: 88px;
+}
+
+.help-title {
+  font-family: serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #171717;
+}
+
+/* Table of contents: brand-coloured active marker */
+.help-toc .nav-link {
+  color: #666666;
+  border-left: 2px solid #e2e8ee;
+  padding: 5px 0 5px 14px;
+  font-size: 0.82rem;
+}
+
+.help-toc .nav-link:hover,
+.help-toc .nav-link.active {
+  color: #0F8FA6;
+  border-left-color: #02b3bd;
+}
+
+/* Article typography */
+.help-article {
+  color: #3e3f3f;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.help-article section + section {
+  margin-top: 2.75rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid #eef1f4;
+}
+
+.help-article h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #171717;
+}
+
+.help-article h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #171717;
+  margin-top: 1.75rem;
+}
+
+.help-article h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+.help-article strong {
+  color: #171717;
+}
+
+.help-article a:not(.btn-outline-dark-pill) {
+  color: #0F8FA6;
+}
+
+.help-article code {
+  color: #293042;
+  background: #f4f7f9;
+  border: 1px solid #e2e8ee;
+  border-radius: 5px;
+  padding: 1px 6px;
+}
+
+.help-num {
+  color: #02b3bd;
+  margin-right: 6px;
+}

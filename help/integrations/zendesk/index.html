@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zendesk Integration – Installation &amp; Configuration | Prodbench Help</title>
+    <meta name="description" content="Install and configure the Prodbench app for Zendesk Support: enable the integration, upload the private app, configure settings and map Zendesk brands to Prodbench workspaces.">
+    <link rel="canonical" href="https://www.prodbench.com/help/integrations/zendesk/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/app.css" rel="stylesheet"/>
+    <link href="/assets/css/landing.css" rel="stylesheet"/>
+    <link href="/assets/css/help.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.45.0/dist/tabler-icons.min.css">
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/img/prodbench-logo-240.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_cgyZd3CT8HLq2kpUlqyNNwsTFjVJQHsMDjo5C555FxO', {
+          api_host: 'https://us.i.posthog.com',
+          person_profiles: 'identified_only',
+      })
+    </script>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#helpToc" data-bs-root-margin="-90px 0px -60% 0px">
+
+    <nav class="navbar landing-navbar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="/" style="color: #1a1a1a; font-size: 1.6rem; letter-spacing: 0.02em;">
+          <img src="/assets/img/prodbench-logo-240.png" alt="" width="48" height="60" style="height: 60px; width: 48px; margin-right: -6px;">
+          Prodbench
+        </a>
+
+        <span class="h4 mb-0 nav-contact-email">hello@prodbench.com</span>
+      </div>
+    </nav>
+
+    <main class="py-4 py-md-5">
+      <div class="container">
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb small mb-4">
+            <li class="breadcrumb-item"><a href="/" class="text-body-secondary text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item">Help</li>
+            <li class="breadcrumb-item">Integrations</li>
+            <li class="breadcrumb-item active" aria-current="page">Zendesk</li>
+          </ol>
+        </nav>
+
+        <header class="mb-5" style="max-width: 760px;">
+          <div class="section-tag text-start">Integration guide</div>
+          <h1 class="help-title mb-3">Prodbench for Zendesk Support</h1>
+          <p class="hero-body mb-3">Install and configure the Prodbench Zendesk integration to connect Zendesk tickets with Prodbench work items, right from the ticket sidebar.</p>
+          <div class="d-flex flex-wrap gap-3 small">
+            <span><strong class="text-dark">Audience:</strong> Zendesk administrators and Prodbench users</span>
+            <span><strong class="text-dark">Integration:</strong> Prodbench for Zendesk Support</span>
+          </div>
+        </header>
+
+        <div class="row g-4 g-lg-5 align-items-start">
+
+          <aside class="col-lg-3 sticky-lg-top help-toc" aria-label="On this page">
+            <div class="section-tag text-start mb-2">On this page</div>
+            <nav id="helpToc" class="nav flex-column">
+              <a class="nav-link" href="#overview">1. Overview</a>
+              <a class="nav-link" href="#prerequisites">2. Prerequisites</a>
+              <a class="nav-link" href="#enable-in-prodbench">3. Enable in Prodbench</a>
+              <a class="nav-link" href="#install-in-zendesk">4. Install in Zendesk</a>
+              <a class="nav-link" href="#configure-settings">5. Configure app settings</a>
+              <a class="nav-link" href="#workspace-mapping">6. Workspace mapping</a>
+              <a class="nav-link" href="#using-prodbench">7. Using Prodbench in Zendesk</a>
+              <a class="nav-link" href="#troubleshooting">8. Troubleshooting</a>
+              <a class="nav-link" href="#setup-complete">9. Setup complete</a>
+            </nav>
+          </aside>
+
+          <div class="col-lg-9">
+            <article class="card border-0 shadow-sm rounded-4 help-article" style="max-width: 800px;">
+              <div class="card-body p-4 p-md-5">
+
+                <section id="overview">
+                  <h2><span class="help-num">1.</span>Overview</h2>
+                  <p>The Prodbench Zendesk Integration enables support teams to connect Zendesk tickets with Prodbench work items, helping teams track customer requirements, identify existing development initiatives, and escalate customer feedback directly from Zendesk.</p>
+                  <p>Once installed and configured, the integration allows users to:</p>
+                  <ul>
+                    <li><strong>View suggested work items</strong> relevant to the current Zendesk ticket.</li>
+                    <li><strong>Search for existing work items</strong> in Prodbench.</li>
+                    <li><strong>Link Zendesk tickets</strong> to existing Prodbench work items.</li>
+                    <li><strong>Create new work items</strong> directly from the Zendesk ticket interface.</li>
+                    <li><strong>Associate tickets with the appropriate Prodbench workspace</strong> through workspace mapping.</li>
+                  </ul>
+                  <p class="mb-0">This guide explains how to install, configure, and start using the integration.</p>
+                </section>
+
+                <section id="prerequisites">
+                  <h2><span class="help-num">2.</span>Prerequisites</h2>
+                  <p>Before installing the integration, ensure the following requirements are met:</p>
+                  <ul>
+                    <li>An active Prodbench account.</li>
+                    <li>Administrator access to Prodbench to enable the integration and generate an API token.</li>
+                    <li>Administrator access to your Zendesk Support account.</li>
+                    <li>The latest Prodbench Zendesk application package (<code>ProdbenchApp.zip</code>). You can <a href="#download-app">download it below</a>.</li>
+                    <li>Your Prodbench account subdomain.</li>
+                  </ul>
+                  <div class="alert alert-info d-flex gap-2 mb-0" role="note">
+                    <i class="ti ti-info-circle fs-5" aria-hidden="true"></i>
+                    <div><strong>Important:</strong> Administrator privileges are required for the initial installation and configuration. Once setup is complete, regular users can access the integration within Zendesk tickets.</div>
+                  </div>
+                </section>
+
+                <section id="enable-in-prodbench">
+                  <h2><span class="help-num">3.</span>Enable the Zendesk Integration in Prodbench</h2>
+                  <p>The first step is to enable the integration in your Prodbench account and retrieve the API token required for authentication.</p>
+
+                  <h3>Step 1: Sign in to Prodbench</h3>
+                  <p>Log in to your Prodbench account using an administrator account.</p>
+
+                  <h3>Step 2: Enable the Zendesk Integration</h3>
+                  <p>Navigate to the integrations section in Prodbench and enable the <strong>Zendesk Integration</strong>.</p>
+
+                  <h3 id="api-token">Step 3: Copy the API Token</h3>
+                  <p>Once enabled, Prodbench displays an API token that will be used to authenticate the Zendesk application.</p>
+                  <ol>
+                    <li>Locate the API token displayed after enabling the integration.</li>
+                    <li>Copy the token.</li>
+                    <li>Store it securely until you complete the Zendesk app installation.</li>
+                  </ol>
+                  <p>You will enter this token in the <strong>API Token</strong> field during the Zendesk installation (see <a href="#configure-settings">Section 5</a>).</p>
+                  <div class="alert alert-warning d-flex gap-2 mb-0" role="note">
+                    <i class="ti ti-shield-lock fs-5" aria-hidden="true"></i>
+                    <div><strong>Security note:</strong> Treat the API token as a confidential credential. Do not share it publicly or expose it in screenshots or documentation.</div>
+                  </div>
+                </section>
+
+                <section id="install-in-zendesk">
+                  <h2><span class="help-num">4.</span>Install the Prodbench App in Zendesk</h2>
+                  <p>The Prodbench integration is currently installed as a private Zendesk application.</p>
+
+                  <h3 id="download-app">Step 1: Download the Application</h3>
+                  <p>Download the latest Prodbench Zendesk application package:</p>
+                  <div class="card bg-light border rounded-3 mb-3">
+                    <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-3">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="feat-icon"><i class="ti ti-file-zip" aria-hidden="true"></i></div>
+                        <div>
+                          <div class="fw-semibold text-dark">ProdbenchApp.zip</div>
+                          <div class="small text-body-secondary">Prodbench app package for Zendesk Support</div>
+                        </div>
+                      </div>
+                      <a class="btn-outline-dark-pill d-inline-flex align-items-center gap-2" href="/downloads/zendesk/ProdbenchApp.zip" download>
+                        <i class="ti ti-download" aria-hidden="true"></i> Download
+                      </a>
+                    </div>
+                  </div>
+                  <p>Keep the package compressed. It must be uploaded as a ZIP file.</p>
+
+                  <h3>Step 2: Open the Zendesk Admin Center</h3>
+                  <ol>
+                    <li>Sign in to your Zendesk Support account as an administrator.</li>
+                    <li>Open <strong>Zendesk Admin Center</strong>.</li>
+                    <li>Navigate to <strong>Apps and integrations → Apps → Zendesk Support apps</strong>.</li>
+                    <li>Select the option to upload a private app.</li>
+                  </ol>
+                  <div class="alert alert-info d-flex gap-2" role="note">
+                    <i class="ti ti-info-circle fs-5" aria-hidden="true"></i>
+                    <div><strong>Note:</strong> Private app installation is required until the Prodbench application becomes available through the Zendesk Marketplace.</div>
+                  </div>
+
+                  <h3>Step 3: Upload the Application</h3>
+                  <ol class="mb-0">
+                    <li>Click <strong>Upload private app</strong>.</li>
+                    <li>Select the <code>ProdbenchApp.zip</code> file.</li>
+                    <li>Follow the prompts to upload the application.</li>
+                    <li>Once uploaded, the application configuration screen will appear.</li>
+                  </ol>
+                </section>
+
+                <section id="configure-settings">
+                  <h2><span class="help-num">5.</span>Configure the Application Settings</h2>
+                  <p>After uploading the application, complete the required configuration fields.</p>
+                  <div class="table-responsive">
+                    <table class="table table-bordered small">
+                      <thead class="table-light">
+                        <tr><th scope="col" class="w-25">Field</th><th scope="col">Description</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td class="fw-medium text-dark">Title</td><td>A recognizable name for the application in the Zendesk ticket sidebar.</td></tr>
+                        <tr><td class="fw-medium text-dark">Your Account Subdomain</td><td>The subdomain associated with your active Prodbench account.</td></tr>
+                        <tr><td class="fw-medium text-dark">API Token</td><td>The authentication token generated when enabling the Zendesk integration in Prodbench.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h3>Title</h3>
+                  <p>Enter a name that helps your support team identify the application within the Zendesk ticket interface.</p>
+                  <p><strong>Recommended value:</strong> <code>Prodbench</code></p>
+
+                  <h3>Your Account Subdomain</h3>
+                  <p>Enter only the subdomain associated with your Prodbench account. For example:</p>
+                  <div class="bg-light border rounded-3 p-3 mb-3 small">
+                    <div class="mb-1"><span class="text-body-secondary me-2">Account URL</span><code>https://yourdomain.prodbench.com</code></div>
+                    <div><span class="text-body-secondary me-2">Enter</span><code>yourdomain</code></div>
+                  </div>
+                  <div class="alert alert-warning d-flex gap-2" role="note">
+                    <i class="ti ti-alert-triangle fs-5" aria-hidden="true"></i>
+                    <div><strong>Important:</strong> Do not include <code>https://</code> or <code>.prodbench.com</code> in this field.</div>
+                  </div>
+
+                  <h3>API Token</h3>
+                  <p>Paste the token you copied from Prodbench in <a href="#api-token">Section 3, Step 3</a>. Ensure the complete token is entered without additional spaces.</p>
+
+                  <h3>Save and Install</h3>
+                  <p class="mb-0">After entering the required information, save the configuration and complete the app installation.</p>
+                </section>
+
+                <section id="workspace-mapping">
+                  <h2><span class="help-num">6.</span>Configure Workspace Mapping</h2>
+                  <p>Workspace mapping connects Zendesk brands with their corresponding Prodbench workspaces. This ensures that work item suggestions, searches, and newly created work items are associated with the appropriate workspace.</p>
+
+                  <h3>Step 1: Open the Prodbench App</h3>
+                  <ol>
+                    <li>Navigate to the Zendesk Support ticketing interface.</li>
+                    <li>Open any existing ticket.</li>
+                    <li>Locate the <strong>Prodbench</strong> application in the right-hand sidebar.</li>
+                  </ol>
+
+                  <h3>Step 2: Access Workspace Mapping Settings</h3>
+                  <p>Click the <strong>gear icon</strong> (<i class="ti ti-settings" aria-hidden="true"></i>) in the top-right corner of the Prodbench application to open the workspace mapping settings.</p>
+
+                  <h3>Step 3: Review or Configure Workspace Mapping</h3>
+                  <h4>Automatic mapping</h4>
+                  <p>If your Zendesk account has only one brand and your Prodbench account has only one workspace, the integration automatically maps the Zendesk brand to the available Prodbench workspace. No manual configuration is required in this scenario.</p>
+
+                  <h4>Manual mapping</h4>
+                  <p>If your account contains multiple Zendesk brands or multiple Prodbench workspaces, review and configure the mappings as needed.</p>
+                  <ol>
+                    <li>Open the workspace mapping settings using the gear icon.</li>
+                    <li>Select the appropriate Prodbench workspace for each Zendesk brand.</li>
+                    <li>Save the mappings.</li>
+                  </ol>
+                  <div class="alert alert-info d-flex gap-2" role="note">
+                    <i class="ti ti-info-circle fs-5" aria-hidden="true"></i>
+                    <div><strong>Note:</strong> Zendesk accounts include a default brand. If there is only one brand and one Prodbench workspace, the mapping is created automatically. Administrators can review or modify workspace mappings at any time.</div>
+                  </div>
+
+                  <h3>How workspace mapping works</h3>
+                  <p>The mapped workspace determines where the integration searches for, suggests, and creates work items.</p>
+                  <ul>
+                    <li><strong>Work item suggestions:</strong> Displays relevant work items from the mapped Prodbench workspace.</li>
+                    <li><strong>Work item search:</strong> Searches for existing work items within the associated workspace.</li>
+                    <li><strong>Create work item:</strong> Uses the mapped workspace when creating new work items from Zendesk.</li>
+                  </ul>
+                  <div class="alert alert-warning d-flex gap-2 mb-0" role="note">
+                    <i class="ti ti-alert-triangle fs-5" aria-hidden="true"></i>
+                    <div><strong>Important:</strong> Verify that each Zendesk brand is mapped to the appropriate Prodbench workspace to ensure customer requirements are tracked correctly.</div>
+                  </div>
+                </section>
+
+                <section id="using-prodbench">
+                  <h2><span class="help-num">7.</span>Using Prodbench Within Zendesk</h2>
+                  <p>Once the installation and workspace configuration are complete, the integration is ready for everyday use. Regular Zendesk users can open tickets and access Prodbench directly from the ticket sidebar.</p>
+
+                  <h3>View suggested work items</h3>
+                  <p>When a Zendesk ticket is opened, the Prodbench application automatically displays suggested work items relevant to the ticket. These suggestions help support agents identify whether a customer-reported requirement, issue, or feature request is already being tracked in Prodbench.</p>
+
+                  <h3>Search existing work items</h3>
+                  <p>Users can search for work items in Prodbench to find existing requirements or development tasks.</p>
+
+                  <h3>Link a ticket to a work item</h3>
+                  <p>If an appropriate work item already exists, users can link the Zendesk ticket to that item instead of creating a duplicate.</p>
+
+                  <h3>Create a new work item</h3>
+                  <p class="mb-0">If no relevant work item exists, users can create a new work item directly from the Zendesk application. The configured workspace mapping helps associate the new work item with the correct Prodbench workspace.</p>
+                </section>
+
+                <section id="troubleshooting">
+                  <h2><span class="help-num">8.</span>Troubleshooting</h2>
+                  <div class="table-responsive">
+                    <table class="table table-bordered small">
+                      <thead class="table-light">
+                        <tr><th scope="col" class="w-25">Issue</th><th scope="col">Recommended action</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td class="fw-medium text-dark">Prodbench app is not visible in the ticket sidebar.</td><td>Verify that the application has been installed and enabled in Zendesk Support.</td></tr>
+                        <tr><td class="fw-medium text-dark">Authentication fails.</td><td>Verify that the API token matches the token generated in Prodbench and that the account subdomain is correct.</td></tr>
+                        <tr><td class="fw-medium text-dark">Work item suggestions are not displayed.</td><td>Check the API configuration and confirm that the appropriate workspace mapping has been saved.</td></tr>
+                        <tr><td class="fw-medium text-dark">Work items appear under an incorrect workspace.</td><td>Open the gear icon in the Prodbench app and review the workspace mapping.</td></tr>
+                        <tr><td class="fw-medium text-dark">Workspace mapping needs to be changed.</td><td>Click the gear icon in the top-right corner, update the mappings, and save your changes.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="mb-0">If the issue persists after checking the configuration, contact the Prodbench support team at <a href="mailto:hello@prodbench.com">hello@prodbench.com</a>.</p>
+                </section>
+
+                <section id="setup-complete" class="text-center">
+                  <i class="ti ti-circle-check text-success" style="font-size: 2.5rem;" aria-hidden="true"></i>
+                  <h2><span class="help-num">9.</span>Setup Complete</h2>
+                  <p><strong>Your Prodbench Zendesk Integration is ready to use.</strong></p>
+                  <p>Your support team can now identify relevant work items, link existing development activities, and create new work items directly from Zendesk tickets.</p>
+                  <p>By connecting customer support interactions with product development workflows, Prodbench helps teams maintain visibility into customer requirements and reduce duplicate work.</p>
+                  <p class="small text-body-secondary mt-4 mb-0"><strong>Need more help?</strong> Email us at <a href="mailto:hello@prodbench.com">hello@prodbench.com</a>.</p>
+                </section>
+
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
